@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <!-- ControlCAN.dll 是 32 位 -->
+    <PlatformTarget>x86</PlatformTarget>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>TofCanViewer</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- ControlCAN.dll 与本工程同目录，必须拷到输出目录，否则运行时 DllNotFoundException -->
+    <None Include="ControlCAN.dll" Link="ControlCAN.dll" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
